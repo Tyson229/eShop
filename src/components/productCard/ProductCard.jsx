@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({productData}) => {
     return (
-        <div className='bg-slate-100 w-1/4 sm:w-1/2'>
-            <img className='w-2/4' src={productData.imageUrl}/>
+        <NavLink to={`product/${productData.id}`}><div className='border p-5'>
+            <div className='h-full w-full xl:h-72 xl:w-72 bg-slate-100'>
+                <img className='' src={productData.imageUrl}/>
+            </div>
             <h2>{productData.brand} {productData.model}</h2>
             <p>${productData.price}</p>
-
-            <NavLink to={`product/${productData.id}`}>Details</NavLink>
-        </div>
+        </div> </NavLink>
     );
 };
 

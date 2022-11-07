@@ -10,7 +10,7 @@ const Products = () => {
     }, []);
 
     return (
-        <main className='flex flex-row flex-wrap'>
+        <main className='grid grid-cols-4 max-sm:grid-cols-2 gap-2 mx-10'>
             {products.map((productData) => (
                 <ProductCard key={productData.id} productData={productData}/>
             ))}

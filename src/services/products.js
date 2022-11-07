@@ -1,4 +1,4 @@
-import {collection, getDocs} from 'firebase/firestore';
+import {collection, getDocs, doc, getDoc} from 'firebase/firestore';
 import db from '../config/firebase';
 
 export const getProducts = async () => {
@@ -17,4 +17,17 @@ export const getProducts = async () => {
 
     return clenaedData;
 };
+
+export const getProductByID = async (id) => {
+    const docRef = doc(db, 'shoes', id);
+
+    const querySnapshot = await getDoc(docRef);
+
+    if(!querySnapshot.exists()){
+        throw new Error(`Product with id ${id} doesn't exist`);
+    }
+
+    return {id: querySnapshot.id, ... querySnapshot.data()};
+};
+
 

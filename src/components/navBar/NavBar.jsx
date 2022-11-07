@@ -4,6 +4,7 @@ import Home from '../home/Home';
 import Products from '../../containers/products/Producst';
 import Cart from '../../containers/cart/Cart';
 import Favourite from '../favourite/Favourite';
+import ProductDetails from '../productDetails/ProductDetails';
 
 const NavBar = () => {
 
@@ -43,6 +44,7 @@ const NavBar = () => {
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/cart' element={<Cart/>}></Route>
                 <Route path='/favourite' element={<Favourite/>}></Route>
+                <Route path='/product/:id' element={<ProductDetails/>}></Route>
             </Routes>
         </BrowserRouter>
     )
