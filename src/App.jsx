@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import NavBar from './components/navBar/NavBar'
-import Footer from './containers/footer/Footer'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (

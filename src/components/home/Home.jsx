@@ -5,7 +5,6 @@ import Carousel from './carousel/Carousel';
 const Home = () => {
     return (
         <main>
-            Home
             {/* <Carousel/> */}
             <Products/>
         </main>
