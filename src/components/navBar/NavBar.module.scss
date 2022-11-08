@@ -1,0 +1,38 @@
+@use '../../modules/mixins' ;
+@use '../../modules/color';
+.NavBar {
+    @include mixins.Flexbox;
+    width: 100%;
+    padding: 1.5em;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    
+    &_home {
+        @media screen and (max-width: 1040px) {
+            width: 5em;
+        }
+        @media screen and (min-width: 1041px) {
+            width: 10em;
+        }
+    }
+
+    &_links {
+        @include mixins.Flexbox;
+        gap: 1.5em;
+        
+        &_link {
+            text-decoration: none;
+            color: color.$grey;
+            font-weight: bold;
+            &:hover {
+                color: black;
+                text-decoration: underline;
+            }
+            @media screen and (max-width: 1040px) {
+                font-size: 0.8em;
+            }
+        }
+    }
+
+
+}

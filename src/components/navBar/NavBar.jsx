@@ -5,6 +5,7 @@ import Products from '../../containers/products/Producst';
 import Cart from '../../containers/cart/Cart';
 import Favourite from '../favourite/Favourite';
 import ProductDetails from '../productDetails/ProductDetails';
+import style from './NavBar.module.scss'
 
 const NavBar = () => {
 
@@ -29,22 +30,25 @@ const NavBar = () => {
 
     return (
         <BrowserRouter>
-            <header className='flex flex-row justify-between box-border content-center  p-3 pt-10 '>
+            <header className={style.NavBar}>
                 <div>
-                    <Link to='/'><img className='w-40 bg-black p-2' src='../logo1.png'></img></Link>
+                    <Link to='/'><img className={style.NavBar_home} src='../../../logo.png'></img></Link>
                 </div>
 
-                <div className='flex flex-row justify-between content-center p-3 gap-6'>
-                    <Link to='/favourite'><img className='w-6' src={heartIcon} onMouseOver={heartButtonOnMouseOver} onMouseOut={heartButtonOnMouseOut} /></Link>
-                    <Link to='/cart'><img className='w-6' src={cartIcon} onMouseOver={cartButtonOnMouseOver} onMouseOut={cartButtonOnMouseOut}/></Link>
+                <div className={style.NavBar_links}>
+                    <Link className={style.NavBar_links_link} to='/products'>Products</Link>
+                    <Link className={style.NavBar_links_link} to='/favourite'>Favourites</Link>
+                    <Link className={style.NavBar_links_link} to='/cart'>Cart</Link>
+                    {/* <Link to='/favourite'><img className='w-6' src={heartIcon} onMouseOver={heartButtonOnMouseOver} onMouseOut={heartButtonOnMouseOut} /></Link>
+                    <Link to='/cart'><img className='w-6' src={cartIcon} onMouseOver={cartButtonOnMouseOver} onMouseOut={cartButtonOnMouseOut}/></Link> */}
                 </div>
-
             </header>
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
+                <Route path='/products' element={<Products/>}></Route>
                 <Route path='/cart' element={<Cart/>}></Route>
                 <Route path='/favourite' element={<Favourite/>}></Route>
-                <Route path='/product/:id' element={<ProductDetails/>}></Route>
+                <Route path='/products/:id' element={<ProductDetails/>}></Route>
             </Routes>
         </BrowserRouter>
     )

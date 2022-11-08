@@ -1,0 +1,15 @@
+.Products {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 10px;
+    @media screen and (min-width: 1040px) {
+        grid-template-columns: repeat(4,1fr);
+    }
+    @media screen and (max-width: 1039px) and (min-width: 640px) {
+        grid-template-columns: repeat(3,1fr);
+    }
+    @media screen and (max-width: 639px) {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
