@@ -11,11 +11,11 @@ const Products = () => {
     }, []);
 
     return (
-        <div className='flex w-full h-full bg-red-500 items-center'>
-            <div className='max-sm:hidden sm:w-1/4 text-center '>Filter</div>
-            <ul className='flex box-border flex-wrap sm:w-3/4'>
+        <div className='flex w-full h-full justify-center  p-3'>
+            <div className='max-lg:hidden lg:w-1/3 xl:w-1/4  text-center'>FILTER</div>
+            <ul className='grid grid-cols-2 xl:grid-cols-4 box-border lg:w-2/3 xl:w-3/4 gap-2'>
             {products.map((productData) => (
-                <li className='p-2 w-1/2 md:p-4 md:w-1/4 bg-black'><ProductCard key={productData.id} productData={productData} /></li>
+                <li className='border box-border flex items-end rounded bg-white hover:outline'><ProductCard key={productData.id} productData={productData} /></li>
             ))}
             </ul>
         </div>

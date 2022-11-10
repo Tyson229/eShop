@@ -30,15 +30,19 @@ const NavBar = () => {
 
     return (
         <BrowserRouter>
-            <header className='flex box-border justify-between items-center p-5'>
+            <header className='flex box-border justify-between items-center p-5 my-4'>
                 <div>
                     <Link to='/'><img className='w-28 md:w-40' src='../../../logo.png'></img></Link>
                 </div>
 
-                <div className='flex box-border gap-7 md:gap-4'>
-                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/products'>Products</Link>
-                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/favourite'>Favourites</Link>
-                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/cart'>Cart</Link>
+                <div className='flex box-border gap-4 items-center'>
+                    {/* <Link className='text-sm md:text-base  hover:text-sky-500' to='/products'>Products</Link>
+                    <Link className='text-sm md:text-base  hover:text-sky-500' to='/favourite'>Favourites</Link>
+                    <Link className='text-sm md:text-base  hover:text-sky-500' to='/cart'>Cart</Link> */}
+
+                    <Link className='text-sm md:text-base p-2 font-semibold hover:bg-black  hover:text-white ' to='/products'>PRODUCTS</Link>
+                    <Link className='' to='/favourite'><img className='w-5 md:w-7' src={heartIcon} onMouseOver={heartButtonOnMouseOver} onMouseOut={heartButtonOnMouseOut}/></Link>
+                    <Link  to='/cart'><img className='w-5 md:w-7' src={cartIcon} onMouseOver={cartButtonOnMouseOver} onMouseOut={cartButtonOnMouseOut}/></Link>
                 </div>
             </header>
             <Routes>

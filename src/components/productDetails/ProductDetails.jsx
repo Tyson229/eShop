@@ -35,12 +35,12 @@ const ProductDetails = () => {
     }, []);
     return (
         <>
-            {loading && <h1 className=''>Loading</h1>}
+            {loading && <p className='w-screen h-screen text-center my-auto'>LOADING...</p>}
             {error && <p>{error}</p>}
             {product && (
-                <main className=''>
+                <main className='h-screen w-full flex flex-col xl:flex-row justify-center bg-slate-100'>
                     
-                    <img className='' src={product.imageUrl}/>
+                    <img className='p-4 xl:w-2/5' src={product.imageUrl}/>
                     <div className='' >
                         
                         <p className=''>{product.brand.toUpperCase()}</p>
@@ -60,7 +60,7 @@ const ProductDetails = () => {
                                 
                             </ul>
                             <button disabled={!size} type='submit' className=''>Add to Cart</button>
-                            <button  className='' onClick={onClickFav}><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"/></button>
+                            <button  className='w-10' onClick={onClickFav}><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"/></button>
                         </form>
                         
                     </div>
