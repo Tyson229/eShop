@@ -5,7 +5,7 @@ import Products from '../../containers/products/Producst';
 import Cart from '../../containers/cart/Cart';
 import Favourite from '../favourite/Favourite';
 import ProductDetails from '../productDetails/ProductDetails';
-import style from './NavBar.module.scss'
+
 
 const NavBar = () => {
 
@@ -30,17 +30,15 @@ const NavBar = () => {
 
     return (
         <BrowserRouter>
-            <header className={style.NavBar}>
+            <header className='flex box-border justify-between items-center p-5'>
                 <div>
-                    <Link to='/'><img className={style.NavBar_home} src='../../../logo.png'></img></Link>
+                    <Link to='/'><img className='w-28 md:w-40' src='../../../logo.png'></img></Link>
                 </div>
 
-                <div className={style.NavBar_links}>
-                    <Link className={style.NavBar_links_link} to='/products'>Products</Link>
-                    <Link className={style.NavBar_links_link} to='/favourite'>Favourites</Link>
-                    <Link className={style.NavBar_links_link} to='/cart'>Cart</Link>
-                    {/* <Link to='/favourite'><img className='w-6' src={heartIcon} onMouseOver={heartButtonOnMouseOver} onMouseOut={heartButtonOnMouseOut} /></Link>
-                    <Link to='/cart'><img className='w-6' src={cartIcon} onMouseOver={cartButtonOnMouseOver} onMouseOut={cartButtonOnMouseOut}/></Link> */}
+                <div className='flex box-border gap-7 md:gap-4'>
+                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/products'>Products</Link>
+                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/favourite'>Favourites</Link>
+                    <Link className='text-sm md:text-base font-bold hover:text-sky-500' to='/cart'>Cart</Link>
                 </div>
             </header>
             <Routes>

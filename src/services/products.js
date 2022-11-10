@@ -1,4 +1,4 @@
-import {collection, getDocs, doc, getDoc} from 'firebase/firestore';
+import {collection, getDocs, doc, getDoc, updateDoc} from 'firebase/firestore';
 import db from '../config/firebase';
 
 export const getProducts = async () => {
@@ -30,4 +30,12 @@ export const getProductByID = async (id) => {
     return {id: querySnapshot.id, ... querySnapshot.data()};
 };
 
+export const addToFav = async (id) => {
+    const docRef = doc(db, 'shoes', id);
+    
+    await updateDoc(docRef, {
+        isFav: true
+    });
+    return true;
+}
 

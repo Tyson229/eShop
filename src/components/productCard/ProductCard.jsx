@@ -1,20 +1,17 @@
 import { Link } from 'react-router-dom';
-import style from './ProductCard.module.scss'
+
 
 const ProductCard = ({productData}) => {
     return (
-        <Link to={`products/${productData.id}`} className={style.Link}>
-            <div className={style.ProductCard}>
-                <div className={style.ProductCard_thumbnail}>
+        <Link to={`products/${productData.id}`} className=''>
+                <div className=''>
                     <img className='' src={productData.imageUrl}/>
                 </div>
-                <div className={style.ProductCard_info}>
-                    <p className={[style.ProductCard_info_brand ]}>{productData.brand.toUpperCase()} </p>
-                    <p className={style.ProductCard_info_model}>{productData.model} </p>
-                    <p className={style.ProductCard_info_price}>${productData.price}  </p>
+                <div className='w-full'>
+                    <p className=''>{productData.brand.toUpperCase()} </p>
+                    <p className=''>{productData.model} </p>
+                    <p className=''>${productData.price}  </p>
                 </div>
-                
-            </div> 
         </Link>
     );
 };

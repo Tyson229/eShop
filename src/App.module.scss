@@ -1,6 +1,0 @@
-@use './modules/mixins';
-.App {
-    @include mixins.Flexbox;
-    flex-direction: column;
-    //background-color: #ececec;
-}

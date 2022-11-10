@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getProducts } from '../../services/products';
 import ProductCard from '../../components/productCard/ProductCard';
-import style from './Products.module.scss'
+
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -11,11 +11,14 @@ const Products = () => {
     }, []);
 
     return (
-        <main className={style.Products}>
+        <div className='flex w-full h-full bg-red-500 items-center'>
+            <div className='max-sm:hidden sm:w-1/4 text-center '>Filter</div>
+            <ul className='flex box-border flex-wrap sm:w-3/4'>
             {products.map((productData) => (
-                <ProductCard key={productData.id} productData={productData}/>
+                <li className='p-2 w-1/2 md:p-4 md:w-1/4 bg-black'><ProductCard key={productData.id} productData={productData} /></li>
             ))}
-        </main>
+            </ul>
+        </div>
     )
 }
 
