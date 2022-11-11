@@ -11,11 +11,33 @@ const Products = () => {
     }, []);
 
     return (
-        <div className='flex w-full h-full justify-center  p-3'>
-            <div className='max-lg:hidden lg:w-1/3 xl:w-1/4  text-center'>FILTER</div>
-            <ul className='grid grid-cols-2 xl:grid-cols-4 box-border lg:w-2/3 xl:w-3/4 gap-2'>
+        <div className='flex 
+        max-lg:flex-col 
+        justify-center 
+         
+        max-w-screen-2xl 
+        w-full
+        gap-2
+        p-2
+        box-border 
+        '>
+            <div className='
+            
+            max-lg:bg-black/90 
+            max-lg:text-white 
+            max-lg:w-full 
+            max-lg:mb-1 
+            max-lg:p-2 
+            
+            lg:bg-white
+            lg:outline-neutral-50
+            lg:w-1/4 
+            xl:w-1/5  
+            rounded
+            text-center'>FILTER</div>
+            <ul className='grid grid-cols-2 xl:grid-cols-4 box-border lg:w-3/4 xl:w-4/5 gap-2'>
             {products.map((productData) => (
-                <li className='border box-border flex items-end rounded bg-white hover:outline'><ProductCard key={productData.id} productData={productData} /></li>
+                <li className='box-border flex items-end rounded bg-white hover:outline'><ProductCard key={productData.id} productData={productData} /></li>
             ))}
             </ul>
         </div>

@@ -30,12 +30,17 @@ export const getProductByID = async (id) => {
     return {id: querySnapshot.id, ... querySnapshot.data()};
 };
 
-export const addToFav = async (id) => {
+export const toggleFav = async (id) => {
     const docRef = doc(db, 'shoes', id);
-    
-    await updateDoc(docRef, {
-        isFav: true
-    });
-    return true;
+    const querySnapshot = await getDoc(docRef);
+    //console.log(querySnapshot.data().isFav);
+    if(querySnapshot.data().isFav)
+        await updateDoc(docRef, {
+            isFav: false
+        });
+    else
+        await updateDoc(docRef, {
+            isFav: true
+        });
 }
 

@@ -4,7 +4,7 @@ import Carousel from './carousel/Carousel';
 
 const Home = () => {
     return (
-        <main>
+        <main className='flex flex-col items-center'>
             {/* <Carousel/> */}
             
             <Products/>
