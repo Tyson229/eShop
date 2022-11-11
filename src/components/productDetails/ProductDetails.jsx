@@ -66,14 +66,14 @@ const ProductDetails = () => {
                         <p className='font-bold text-xl w-full px-2'>{product.brand} {product.model}</p>
                         <p className='text-xl p-2'>${product.price}</p>
                         <form onSubmit={onSubmit} className='flex flex-col'>
-                            <ul className='flex flex-wrap box-border bg-slate-100 py-2'>
+                            <ul className='flex flex-wrap box-border py-2'>
                                 {Object.entries(product.sizes).map(([key,value])=> {
                                     const id = `product-variant-${key}`;
                                     return (
                                         <li className='w-1/4 sm:w-1/6 p-1 ' key={key}>
                                             <input name={product.id} id={id} type="radio" value={key} onChange={onChangeSize}  
                                                     className='peer hidden'></input>
-                                            <label htmlFor={id} className='border block text-center h-10 py-2 bg-white peer-checked:bg-black peer-checked:text-neutral-100 peer-checked:font-bold'>{key}</label>
+                                            <label htmlFor={id} className='border border-black block text-center h-10 py-2 bg-white peer-checked:bg-black peer-checked:text-neutral-100 peer-checked:font-bold'>{key}</label>
                                         </li>
                                     )
                                 })}
@@ -81,8 +81,8 @@ const ProductDetails = () => {
                             </ul>
                             
                             <div className='my-2 flex'>
-                            <button disabled={!size} type='submit' className='w-10/12 bg-black active:bg-black/80 text-white disabled:bg-gray-300
-                            py-2'>Add to Cart</button>
+                            <button disabled={!size} type='submit' className='w-10/12 font-bold bg-black active:bg-black/80 text-white disabled:bg-gray-300
+                            py-2'>ADD TO CART</button>
                             <button type="button"  className='w-2/12 flex justify-center' onClick={onClickFav}><img className='w-10 ' src={isFav ? 'https://cdn-icons-png.flaticon.com/512/2077/2077502.png' : "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"}/></button>
                             </div>
                             

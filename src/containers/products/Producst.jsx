@@ -37,7 +37,7 @@ const Products = () => {
             text-center'>FILTER</div>
             <ul className='grid grid-cols-2 xl:grid-cols-4 box-border lg:w-3/4 xl:w-4/5 gap-2'>
             {products.map((productData) => (
-                <li className='box-border flex items-end rounded bg-white hover:outline'><ProductCard key={productData.id} productData={productData} /></li>
+                <li key={productData.id} className='box-border flex items-end rounded bg-white hover:outline'><ProductCard  productData={productData} /></li>
             ))}
             </ul>
         </div>

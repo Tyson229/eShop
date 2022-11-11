@@ -1,4 +1,4 @@
-import {collection, getDocs, doc, getDoc, updateDoc} from 'firebase/firestore';
+import {collection, getDocs, doc, getDoc, updateDoc, query, where} from 'firebase/firestore';
 import db from '../config/firebase';
 
 export const getProducts = async () => {
@@ -44,3 +44,23 @@ export const toggleFav = async (id) => {
         });
 }
 
+export const getFavProducts = async () => {
+    // Get the collection reference
+    const collectionRef = collection(db,'shoes');
+
+    // Conduct the query
+    const q = query(collectionRef,where('isFav','==', true));
+
+    // Get query snapshot of all documents in the db;
+    const querySnapshot = await getDocs(q);
+
+     // Clean the data
+     const clenaedData = querySnapshot.docs.map((rawDocument) => {
+        const id = rawDocument.id;
+        const restOfData = rawDocument.data();
+        
+        return {id, ...restOfData};
+    });
+    console.log(clenaedData);
+    return clenaedData;
+};
