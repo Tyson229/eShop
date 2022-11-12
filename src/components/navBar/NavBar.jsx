@@ -29,7 +29,7 @@ const NavBar = () => {
 
     return (
         <BrowserRouter>
-            <header className='flex box-border justify-between items-center p-5 bg-slate-100'>
+            <header className='flex box-border justify-between items-center p-5 bg-white w-full border-b'>
                 <div>
                     <Link to='/'><img className='w-28 md:w-40' src='../../../logo.png'></img></Link>
                 </div>

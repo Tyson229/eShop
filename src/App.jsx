@@ -8,7 +8,7 @@ function App() {
    // array of objects
   const [cart,setCart] = useState([]);
   return (
-    <div className=''>
+    <div className='flex flex-col items-center h-screen'>
       <CartContext.Provider value={[cart,setCart]}>
         <NavBar/>
       </CartContext.Provider>  
