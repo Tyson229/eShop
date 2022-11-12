@@ -1,8 +1,11 @@
-import { data } from 'autoprefixer';
 import React, { Fragment, useEffect } from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {addToCart} from '../../logic/addToCart';
 import { getProductByID, toggleFav } from '../../services/products';
+import CartContext from '../cartContext/CartContext';
+
 const ProductDetails = () => {
     const {id} = useParams();
     
@@ -13,7 +16,8 @@ const ProductDetails = () => {
     const [isFav, setIsFav] = useState(false);
 
     const[size, setSize] = useState(null);
-     
+    const [cart,setCart] = useContext(CartContext); 
+
     const onChangeSize = (e) => {
         setSize(e.target.value);
     }
@@ -21,7 +25,9 @@ const ProductDetails = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         //set context for cart or state
-        console.log(size);
+        //<addToCart product={product} size={size}/>; 
+        setCart(addToCart([cart,setCart],product,size));
+
     };
 
     const onClickFav = () => {

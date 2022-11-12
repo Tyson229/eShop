@@ -61,6 +61,6 @@ export const getFavProducts = async () => {
         
         return {id, ...restOfData};
     });
-    console.log(clenaedData);
+    
     return clenaedData;
 };

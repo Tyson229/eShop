@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getFavProducts } from '../../services/products';
-import FavouriteCard from './favouriteCard/FavouriteCard';
+import FavouriteCard from '../../components/favouriteCard/FavouriteCard';
 const Favourite = () => {
     const [favProducts, setFavProducts] = useState([]);
 

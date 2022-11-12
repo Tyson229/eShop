@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from '../../containers/products/Producst';
+import Products from '../products/Producst';
 import Carousel from './carousel/Carousel';
 
 const Home = () => {
