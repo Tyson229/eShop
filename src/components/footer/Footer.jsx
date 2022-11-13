@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className='bg-black text-white flex box-border flex-col mt-auto mt-2     w-full'>
+        <footer className='bg-black text-white flex box-border flex-col w-full '>
             <div className='w-full p-2'></div>
             <form className='w-full bg-gradient-to-r from-sky-500 to-red-500 text-black p-2 box-border flex flex-col md:flex-row md:items-center   justify-center gap-2 md:h-24'>
                 <p className='font-bold text-white'>Sign up for $20 off your next order</p>
                 <input type='email' className='p-2 bg-gray-100 w-1/2 focus:overline md:w-1/3 rounded'></input>
-                <button type='submit' className='bg-black text-white p-2 h-fit w-1/3 max-w-fit rounded font-mono'>SIGN UP</button>
+                <button type='submit' className='bg-black text-white p-2 h-fit w-1/3 max-w-fit rounded transition-all duration-200  hover:bg-gray-700 '>Sign Up</button>
             </form>
             <div className='w-full flex flex-wrap  items-center justify-center gap-10 p-2'>
                 <p className=' text-center text-white/70 hover:text-white' target='_' href=''>Returns</p>

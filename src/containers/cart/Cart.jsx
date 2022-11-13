@@ -24,7 +24,7 @@ const Cart = () => {
 
     return (
         <main className='max-w-screen-2xl w-full m-auto flex flex-col box-border'>
-            <p className='text-4xl m-3'>Your shopping cart</p>
+            {cart.length ? <p className='text-4xl m-3'>Your shopping cart</p> : <></>}
             {!cart.length ? <div className='text-center my-5 text-stone-400 w-full'>Your cart is empty</div> : <></>}
             <div className='flex flex-col box-border md:flex-row md:gap-2'>
                 <ul className='w-full lg:w-2/3 flex flex-col'>
@@ -71,7 +71,7 @@ const Cart = () => {
                             <td className='font-bold text-xl text-right'>${shippingCost() ? totalPrice() : totalPrice()+10}</td>
                         </tr>
                     </table>
-                    <button className='bg-black text-white p-2 active:bg-neutral-800 m-3 font-bold'>CHECKOUT</button>
+                    <button className='bg-black text-white p-2 active:bg-neutral-800 font-bold'>CHECKOUT</button>
                 </div> : <></>}
                 
             </div>

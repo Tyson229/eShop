@@ -12,12 +12,17 @@ const CartItem = ({item}) => {
                 <p className="font-semibold my-1">Size: {item.chosenSize}</p>
                 <p className="font-light my-1">${item.product.price}</p>
                 <div className="flex">
+                    {/* Minus button */}
                     <button className=""><img className="w-3" src="https://cdn-icons-png.flaticon.com/512/56/56889.png"/></button>
+                    
+                    {/* Current quantity of item */}
                     <span className="mx-3 font-bold text-center">{item.quantity}</span>
+
+                    {/* plus button */}
                     <button className=""><img className="w-3" src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"/></button>
                 </div>
             </div>
-            <button className="absolute top-3 right-5">X</button>
+            <button className="absolute top-3 right-5" onClick=''>X</button>
         </div>
     );
 };

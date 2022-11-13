@@ -39,7 +39,7 @@ const Products = () => {
 
             <ul className='grid grid-cols-2 xl:grid-cols-4 box-border lg:w-3/4 xl:w-4/5 gap-2'>
             {products.map((productData) => (
-                <li key={productData.id} className='box-border flex items-end rounded bg-white hover:outline'><ProductCard  productData={productData} /></li>
+                <li key={productData.id} className='box-border flex items-end rounded bg-white transition-all border duration-200 hover:border-black'><ProductCard  productData={productData} /></li>
             ))}
             </ul>
         </div>

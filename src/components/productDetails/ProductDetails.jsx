@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import {addToCart} from '../../logic/addToCart';
 import { getProductByID, toggleFav } from '../../services/products';
 import CartContext from '../cartContext/CartContext';
+import ItemCountContext from '../itemCountContext/ItemCountContext';
+import { getTotalItem } from '../../logic/getTotalItem';
 
 const ProductDetails = () => {
     const {id} = useParams();
@@ -17,7 +19,7 @@ const ProductDetails = () => {
 
     const[size, setSize] = useState(null);
     const [cart,setCart] = useContext(CartContext); 
-
+    const [itemTotal, setItemTotal] = useContext(ItemCountContext);
     const onChangeSize = (e) => {
         setSize(e.target.value);
     }
@@ -27,7 +29,8 @@ const ProductDetails = () => {
         //set context for cart or state
         //<addToCart product={product} size={size}/>; 
         setCart(addToCart([cart,setCart],product,size));
-
+        console.log(getTotalItem(cart))
+        setItemTotal(getTotalItem(cart));
     };
 
     const onClickFav = () => {
@@ -37,8 +40,10 @@ const ProductDetails = () => {
 
     useEffect(() => {
         getProductByID(id)
-        .then((data) => {setProduct(data)
-                        setIsFav(data.isFav)})
+        .then((data) => {
+            setProduct(data)
+            setIsFav(data.isFav)}
+        )
         .catch((err) => setError(err.message))
         .finally(() => setLoading(false));
     }, []);
@@ -46,6 +51,7 @@ const ProductDetails = () => {
         <>
             {loading && <p className='w-screen h-screen text-center my-auto'>LOADING...</p>}
             {error && <p>{error}</p>}
+            <span className='bg-black text-white w-full text-center py-3 font-bold'>Free Shipping for order above $190</span>
             {product && (
                 <main className='flex flex-col w-full items-center max-w-screen-xl shadow-md m-4
                 '>
