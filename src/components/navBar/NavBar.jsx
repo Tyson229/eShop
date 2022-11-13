@@ -36,6 +36,7 @@ const NavBar = () => {
         e.currentTarget.src = cartIcon;
     }
     
+
      
     return (
         <ItemCountContext.Provider value= {[itemTotal,setItemTotal]}>
@@ -56,7 +57,7 @@ const NavBar = () => {
                         <button className='inline-flex'>
                             <img className='w-5 md:w-7' src={cartIcon} onMouseOver={cartButtonOnMouseOver} onMouseOut={cartButtonOnMouseOut}/>
                         </button>
-                        {itemTotal > 0 && <div className='absolute top-0 right-0 bg-red-500 text-white rounded-full w-4 text-center -mt-1 -mr-2 text-xs'>{itemTotal}</div>}  
+                        {itemTotal > 0 && <div className='absolute top-0 right-0 bg-red-500 text-white rounded-xl w-4 text-center -mt-1 -mr-2 text-xs'>{itemTotal}</div>}  
                     </Link>
                 </div>
             </header>

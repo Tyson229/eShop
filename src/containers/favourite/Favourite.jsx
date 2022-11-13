@@ -10,7 +10,7 @@ const Favourite = () => {
     }, []);
 
     return (
-        <main className='max-w-screen-2xl w-full m-auto flex flex-col border-box'>
+        <main className='max-w-screen-2xl w-full mb-auto flex flex-col border-box'>
             {!favProducts.length && <p className='text-center my-5 text-stone-400 w-full'>Add something!</p>}
             {favProducts.length > 0 && <p className='text-4xl m-3 '>Your Favourites</p>}
             <ul className='flex flex-wrap mx-3'>

@@ -29,7 +29,6 @@ const ProductDetails = () => {
         //set context for cart or state
         //<addToCart product={product} size={size}/>; 
         setCart(addToCart([cart,setCart],product,size));
-        console.log(getTotalItem(cart))
         setItemTotal(getTotalItem(cart));
     };
 
