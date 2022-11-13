@@ -45,9 +45,9 @@ const CartItem = ({item}) => {
                     {/* plus button */}
                     <button className="" onClick={onClickIncrement} ><img className="w-3 opacity-30 hover:opacity-100 " src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png" title='Increase Quantity'/></button>
                 </div>
+                <button className="mt-2 text-gray-300 hover:text-gray-500/90 hover:underline hover:font-semibold" onClick={onClickRemove} title='Remove'>Remove</button>
             </div>
             {/* Remove button */}
-            <button className="absolute top-3 right-5" onClick={onClickRemove} title='Remove'><img className="w-4 opacity-30 hover:opacity-100" src='https://cdn-icons-png.flaticon.com/512/2976/2976286.png'/></button>
         </div>
     );
 };
